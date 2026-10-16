@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f6f3ec;
+  --white: #ffffff;
+  --sand: #ebe5d8;
+  --ink: #15181e;
+  --stone: #5f636b;
+  --rule: rgba(21, 24, 30, 0.14);
+  /* Colorado flag blue and gold, toned for screen */
+  --navy: #0f2c4c;
+  --navy-deep: #0a2039;
+  --gold: #f2b230;
+  --gold-deep: #d99a17;
+  --red: #b8312f;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-white: var(--white);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --color-stone: var(--stone);
+  --color-rule: var(--rule);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-red: var(--red);
+  --font-sans: var(--font-plex);
+  --font-serif: var(--font-fraunces);
+  --font-script: var(--font-script);
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-plex), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.font-serif {
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+}
+
+/* Hand-marked highlight, like a highlighter pass on a printed page */
+.mark {
+  background-image: linear-gradient(transparent 62%, var(--gold) 62%, var(--gold) 92%, transparent 92%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0 0.06em;
+}
+
+/* Section tone helpers: text colours flip on dark sections */
+.tone-navy {
+  background: var(--navy);
+  color: var(--paper);
+  --rule: rgba(246, 243, 236, 0.18);
+  --stone: #a9b4c2;
+}
+.tone-gold {
+  background: var(--gold);
+  color: var(--ink);
+  --rule: rgba(21, 24, 30, 0.2);
+  --stone: #4a3c1c;
+}
+.tone-white {
+  background: var(--white);
+}
+.tone-sand {
+  background: var(--sand);
+}
